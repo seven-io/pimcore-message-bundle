@@ -42,7 +42,7 @@ class SmsMessageModel
             }
 
             $sms = new SmsMessage("+$this->smsTo", $smsBody);
-            $sms->transport('smsapi');
+            $sms->transport('seven');
         } else {
             $sms = new SmsMessage("+$this->smsTo", 'Error creating message');
         }

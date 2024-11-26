@@ -16,7 +16,7 @@ framework:
             discord: '%env(DISCORD_DSN)%'
             telegram: '%env(TELEGRAM_DSN)%'
         texter_transports:
-            smsapi: '%env(SMSAPI_DSN)%'
+            sms77: '%env(SMS77_DSN)%'
 ```
 
 Then you can install and enable the bundle
@@ -206,21 +206,15 @@ To integrate this package with e-mail, you need to prepare as with regular Pimco
 
 -----------
 
-## SMSAPI
+## seven
 
-To integrate this package with [SMSAPI](https://www.smsapi.pl/), you need to add dsn in your .env file
+To integrate this package with [seven](https://www.seven.io/), you need to add dsn in your .env file
 
 ```
-SMSAPI_DSN=smsapi://TOKEN@default?from=FROM&fast=FAST&test=TEST
+SMS77_DSN=sms77://API_KEY@default?from=FROM
 ```
 
 where:
 
-- `TOKEN` is your API Token (OAuth)
+- `API_KEY` is your [API Key](https://help.seven.io/en/api-key-access)
 - `FROM` is the sender name
-- `FAST` setting this parameter to 1 (default 0) will result in sending message with the highest priority which
-  ensures the quickest possible time of delivery. Attention! Fast messages cost more than normal messages.
-- `TEST` setting this parameter to 1 (default 0) will result in sending message in test mode (message is
-  validated, but not sent).
-
-You can see your account info at https://ssl.smsapi.pl/
